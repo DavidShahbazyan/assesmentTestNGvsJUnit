@@ -10,7 +10,7 @@ import java.util.*;
  * @author David Shahbazyan
  * @since Apr 06, 2017
  */
-public class ListTest {
+public class ListTest_TestNG {
     private List<Integer> list;
 
     @BeforeMethod
@@ -57,6 +57,6 @@ public class ListTest {
 
     @AfterMethod
     public void removeMethodData() {
-        list = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+        list = null;
     }
 }

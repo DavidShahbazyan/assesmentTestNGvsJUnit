@@ -1,8 +1,9 @@
 package com.example.helper;
 
-import static org.testng.Assert.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author David.Shahbazyan
@@ -38,5 +39,4 @@ public class StringUtilsTest_TestNG {
     public void testSplit(String s1, String delimiter, String[] expected) throws Exception {
         assertEquals(StringUtils.split(s1, delimiter), expected);
     }
-
 }

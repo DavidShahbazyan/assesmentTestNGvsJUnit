@@ -3,13 +3,14 @@ package com.example.helper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author David.Shahbazyan
@@ -18,20 +19,11 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class StringUtilsTest_JUnit {
     //default value = 0
-    @Parameter(value = 0)
-    public String s1;
-
-    @Parameter(value = 1)
-    public String s2;
-
-    @Parameter(value = 2)
-    public String delimiter;
-
-    @Parameter(value = 3)
-    public String expected;
-
-    @Parameter(value = 4)
-    public String[] expectedArray;
+    @Parameter(value = 0) public String s1;
+    @Parameter(value = 1) public String s2;
+    @Parameter(value = 2) public String delimiter;
+    @Parameter(value = 3) public String expected;
+    @Parameter(value = 4) public String[] expectedArray;
 
 //    @Parameters(name = "{index}: testConcat(\"{0}\", \"{1}\", \"{2}\") = \"{3}\"")
     @Parameters
@@ -63,5 +55,4 @@ public class StringUtilsTest_JUnit {
     public void testSplit() throws Exception {
         assertArrayEquals(expectedArray, StringUtils.split(s1, delimiter));
     }
-
 }
