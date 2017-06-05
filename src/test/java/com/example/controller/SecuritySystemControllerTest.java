@@ -42,12 +42,12 @@ public class SecuritySystemControllerTest {
 
     @Test
     public void testCheckSecurityStatus_UNKNOWN_CAR_or_UNKNOWN_PERSON() throws Exception {
-        when(cameraSecurityServiceMoc.check()).thenReturn(SecurityStatus.UNKNOWN_CAR);
         when(perimeterSecurityServiceMoc.check()).thenReturn(SecurityStatus.OK);
+
+        when(cameraSecurityServiceMoc.check()).thenReturn(SecurityStatus.UNKNOWN_CAR);
         assertEquals(SecurityStatus.UNKNOWN_CAR, controller.checkSecurityStatus());
 
         when(cameraSecurityServiceMoc.check()).thenReturn(SecurityStatus.UNKNOWN_PERSON);
-        when(perimeterSecurityServiceMoc.check()).thenReturn(SecurityStatus.OK);
         assertEquals(SecurityStatus.UNKNOWN_PERSON, controller.checkSecurityStatus());
     }
 
